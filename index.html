@@ -1,38 +1,222 @@
 <!DOCTYPE html>
-  <html lang="en" dir="ltr">
+<html>
 
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="./bower_components/d3/d3.js"></script>
-    <script src="./script.js"></script>
-    <link rel="stylesheet" href="./styles.css">
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Scrollama: Sticky Side Example</title>
+  <meta name="description" content="Scrollama: Sticky Side Example" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="./bower_components/d3/d3.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    #scrolly {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      background-color: #fff;
+      padding: 0rem;
+      margin-top: 0px;
+    }
 
-  <body>
-    <div class="column" style="display:flex">
-      <div style="width:50%">
-        <h1>The enemies list 2021</h1>
-        <span class="arrow">↓</span>
-        <h2>Political prisoners</h2>
-        <p>We consider political prisoners to be individuals who are serving a prison sentence, as well as those being held in custody or under house arrest as a form of pre-trial <code>detention</code>. We reckon among political prisoners
-          individuals
-          who are being persecuted in connection with the realisation of their legitimate rights as well as those who are being unlawfully or disproportionately persecuted by the authorities for political reasons.</p>
-        <h2>Undesirable organisations</h2>
-        <p>We consider political prisoners to be individuals who are serving a prison sentence, as well as those being held in custody or under house arrest as a form of pre-trial <code>detention</code>. We reckon among political prisoners
-          individuals
-          who are being persecuted in connection with the realisation of their legitimate rights as well as those who are being unlawfully or disproportionately persecuted by the authorities for political reasons.</p>
-        <h2>Foreign agents</h2>
-        <p>We consider political prisoners to be individuals who are serving a prison sentence, as well as those being held in custody or under house arrest as a form of pre-trial <code>detention</code>. We reckon among political prisoners
-          individuals
-          who are being persecuted in connection with the realisation of their legitimate rights as well as those who are being unlawfully or disproportionately persecuted by the authorities for political reasons.</p>
-      </div>
-      <div>
+    #scrolly {
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+    }
+
+    article {
+      position: relative;
+      padding: 0 0rem;
+      max-width: 50%;
+    }
+
+    .sticky-thing {
+      position: -webkit-sticky;
+      position: sticky;
+      width: 50%;
+      height: 100vh;
+      background-color: #F7F8F8;
+      z-index: 0;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .chart {
+      background-image: url("Pattern.svg");
+      background-repeat: no-repeat;
+      background-position: right;
+      width: 100%;
+      height: 100%;
+    }
+
+    .step {
+      margin: 0 0 0 0;
+      background-color: #F7F8F8;
+      color: #3b3b3b;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+    }
+
+    .step:last-child {
+      margin-bottom: 0;
+    }
+
+    .step.is-active {
+      background-color: #F7F8F8;
+      color: #3b3b3b;
+      padding: 0px;
+      margin-bottom: 0;
+    }
+
+    .step p {
+      text-align: left;
+      font-size: 1.3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+
+    <section id="scrolly">
+      <article>
+        <div class="step" data-step="1">
+          <h1>THE ENEMIES OF THE STATE</h1>
+          <span class="arrow">↓</span>
+          <div class="factoids">
+            <div class="counter">
+              <p class="count-text ">Political prisoners</p>
+              <div class="count-title">410</div>
+            </div>
+
+            <div class="counter">
+              <p class="count-text ">Foreign agents</p>
+              <div class="count-title">164</div>
+            </div>
+
+            <div class="counter-last">
+              <p class="count-text ">Undesirable organisations</p>
+              <div class="count-title">41</div>
+            </div>
+          </div>
+
+
+
+        </div>
+        <div class="step" data-step="2">
+          <h2>Political prisoners</h2>
+          <p>We consider political prisoners to be individuals who are serving a prison sentence, as well as those being held in custody or under house arrest as a form of pre-trial <code>detention</code>. We reckon among political prisoners
+            individuals who are being persecuted in connection with the realisation of their legitimate rights as well as those who are being unlawfully or disproportionately persecuted by the authorities for political reasons.</p>
+        </div>
+        <div class="step" data-step="3">
+          <h2>Undesirable organisations</h2>
+          <p>We consider political prisoners to be individuals who are serving a prison sentence, as well as those being held in custody or under house arrest as a form of pre-trial <code>detention</code>. We reckon among political prisoners
+            individuals who are being persecuted in connection with the realisation of their legitimate rights as well as those who are being unlawfully or disproportionately persecuted by the authorities for political reasons.</p>
+        </div>
+        <div class="step" data-step="4">
+          <h2>Foreign agents</h2>
+          <p>We consider political prisoners to be individuals who are serving a prison sentence, as well as those being held in custody or under house arrest as a form of pre-trial <code>detention</code>. We reckon among political prisoners
+            individuals who are being persecuted in connection with the realisation of their legitimate rights as well as those who are being unlawfully or disproportionately persecuted by the authorities for political reasons.</p>
+        </div>
+        <div class="step" data-step="5">
+          <h2>Throughout the years</h2>
+          <p>We consider political prisoners to be individuals who are serving a prison sentence, as well as those being held in custody or under house arrest as a form of pre-trial <code>detention</code>. We reckon among political prisoners
+            individuals who are being persecuted in connection with the realisation of their legitimate rights as well as those who are being unlawfully or disproportionately persecuted by the authorities for political reasons.</p>
+        </div>
+        <div class="step" data-step="6">
+          <p>Sources: n of their legitimate rights as well as those who are being unlawfully or disproportionately persecuted by the authorities for political reasons.</p>
+        </div>
+      </article>
+
+      <div class="sticky-thing">
         <figure class="waffle"></figure>
       </div>
-      <script>
-        addImage();
-      </script>
-    </div>
-  </body>
-  </html>
+    </section>
+
+    <section id="outro"></section>
+  </main>
+
+  <!-- <div class='debug'></div> -->
+  <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+  <script>
+    // using d3 for convenience
+    var main = document.querySelector("main");
+    var scrolly = main.querySelector("#scrolly");
+    var sticky = scrolly.querySelector(".sticky-thing");
+    var article = scrolly.querySelector("article");
+    var steps = article.querySelectorAll(".step");
+
+    // initialize the scrollama
+    var scroller = scrollama();
+
+    function addImage(step) {
+      const waffle = d3.select('.waffle');
+
+      // Create an array with numbers 0 - 99
+      const numbers = d3.range(617);
+      waffle
+        .selectAll('.block')
+        .data(numbers)
+        .enter()
+        .append('div')
+        .attr('class', 'block')
+        .style(
+          'background-color',
+          d => (
+            (d < 315 && step === "1") ? '#b595ff' :
+            (d > 315 && d < 615 && step === "2") ? '#ffe107' :
+            '#CCCCCC'
+          )
+        );
+    }
+
+    function removeImage() {
+      const waffle = d3.select('.waffle');
+      waffle.selectAll('.block').remove();
+    }
+
+
+    // scrollama event handlers
+    function handleStepEnter(response) {
+      // response = { element, direction, index }
+      var el = response.element;
+
+      // remove is-active from all steps
+      // then add is-active to this step
+      steps.forEach(step => step.classList.remove('is-active'));
+      removeImage();
+      el.classList.add('is-active');
+      addImage(el.dataset.step);
+
+      // update graphic based on step
+      //sticky.querySelector("p").innerText = el.dataset.step;
+    }
+
+    function init() {
+      scroller
+        .setup({
+          step: "#scrolly article .step",
+          offset: 0.2,
+          debug: false
+        })
+        .onStepEnter(handleStepEnter);
+      // setup resize event
+      window.addEventListener("resize", scroller.resize);
+    }
+
+
+    // kick things off
+    init();
+  </script>
+</body>
+
+</html>

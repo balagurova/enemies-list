@@ -1,3 +1,9 @@
+body {
+  background-color: #F7F8F8;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 code {
   background-color: #FFC2C8;
   color: #000;
@@ -8,26 +14,21 @@ code {
   border-radius: 4px;
 }
 
-.column {
-  display: inline;
-  float: left;
-  margin-left: 2rem;
-  max-width: 35rem;
-}
-
 p {
   font-family: HK Grotesk;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.7;
+  text-align: left;
+  max-width: 35rem;
 }
 
 h1 {
   font-family: Input Mono;
   font-size: 80px;
-  font-weight: 300;
+  font-weight: 200;
   line-height: 1.15;
-  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  margin-top: -0.5rem;
 }
 
 h2 {
@@ -39,7 +40,7 @@ h2 {
 
 .arrow {
   font-family: circe;
-  font-size: 100px;
+  font-size: 110px;
   font-weight: 300;
   line-height: 1.15;
   margin-top: 0rem;
@@ -59,41 +60,45 @@ h2 {
   border-radius: 25px;
 }
 
+.note {
+  font-family: Input Mono;
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 0.3rem;
+}
+
 .factoids {
+  display: flex;
+  flex-direction: row;
   width: 50%;
-}
-
-.col_fourth {
-  width: 23.5%;
-}
-
-.col_fourth {
-  position: relative;
-  display: inline;
-  display: inline-block;
-  float: left;
-  margin-right: 2%;
-  margin-bottom: 20px;
+  margin-top: auto;
 }
 
 .counter {
-  background-color: #ffffff;
-  padding: 20px 0;
-  border-radius: 5px;
+  padding-right: 50px;
+}
+
+.counter-last {
+  padding-left: 20px;
 }
 
 .count-title {
-  font-size: 40px;
-  font-weight: normal;
+  font-family: HK Grotesk;
+  font-size: 100px;
+  font-weight: lighter;
+  letter-spacing: -3px;
   margin-top: 10px;
-  margin-bottom: 0;
-  text-align: left;
+  margin-bottom: -0.4rem;
+  text-align: left !important;
 }
 
 .count-text {
   font-size: 13px;
   font-weight: normal;
+  line-height: 1.2;
+  width: 2rem;
   margin-top: 10px;
   margin-bottom: 0;
   text-align: left;
+  padding: 0;
 }
