@@ -2,13 +2,15 @@ body {
   background-color: #F7F8F8;
   margin-top: 0;
   margin-bottom: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 @font-face {
   font-family: 'HK Grotesk';
   src: url('./fonts//HKGrotesk-Regular.woff') format('woff');
   src: url('./fonts/HKGrotesk-Light.woff') format('woff'),
-  font-weight: Regular;
+    font-weight: Regular;
 }
 
 code {
@@ -18,19 +20,22 @@ code {
   font-size: .8em;
   font-weight: 300;
   border-radius: 4px;
-}
+  }
 
 .red {
   background-color: #FFC2C8;
 }
 
 .blue {
-  background-color: #99DDEC;
+  background-color: #BFE9F3;
 }
 
 .grey {
-  background-color: #000;
-  color: #FFF;
+  background-color: #DEDEDE;
+}
+
+.outline {
+  border: 1px solid;
 }
 
 p {
@@ -39,6 +44,27 @@ p {
   line-height: 1.7;
   text-align: left;
   max-width: 35rem;
+}
+
+.step p {
+  text-align: left;
+  font-size: 1.3rem;
+}
+
+.sources {
+  margin-bottom: 10px;
+}
+
+.sources p {
+  font-family: input-mono, monospace;
+  font-size: 14px;
+  font-weight: 300;
+  color: #000;
+  line-height: 110%;
+}
+
+.quote p {
+  line-height: 1.4;
 }
 
 h1 {
@@ -124,4 +150,29 @@ h2 {
   margin-bottom: 0;
   text-align: left;
   padding: 0;
+}
+
+div.tooltip {
+  position: absolute;
+  text-align: left;
+  padding: 1px 4px 1px 4px;
+  font-family: input-mono, monospace;
+  color: #fff;
+  font-size: 14px;
+  background: black;
+  border: 0px;
+  pointer-events: none;
+}
+
+a:visited {
+  color: #000;
+}
+
+a {
+line-height: 1.1;
+text-decoration-thickness: 1px;
+}
+
+.story {
+  padding-left: 40px;
 }

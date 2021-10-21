@@ -26,9 +26,9 @@ const politicalPrisonersStyle = circle => circle
   .attr("fill", d => politicalPrisonersColored(d, "#F7F8F8"));
 
 const undesirableStyle = circle => circle
-  .attr("stroke", d => d.Status == UNDESIRABLES ? "#99DDEC" : "black")
+  .attr("stroke", d => d.Status == UNDESIRABLES ? "#FF4444" : "black")
   .attr("stroke-width", "1")
-  .attr("fill", d => d.Status == UNDESIRABLES ? "#99DDEC" : "#F7F8F8");
+  .attr("fill", d => d.Status == UNDESIRABLES ? "#FF4444" : "#F7F8F8");
 
 const foreignAgentStyle = circle => circle
   .attr("stroke", d => foreignAgentColored(d, "black"))
@@ -38,7 +38,7 @@ const foreignAgentStyle = circle => circle
 function politicalPrisonersColored(d, defaultColor) {
   switch (d.Status) {
     case RELIGIOUS_PP:
-      return "#FFC2C8";
+      return "#FF4444";
     case REGULAR_PP:
       return "#99DDEC";
     default:
@@ -49,7 +49,7 @@ function politicalPrisonersColored(d, defaultColor) {
 function foreignAgentColored(d, defaultColor) {
   switch (d.Status) {
     case FOREIGN_AGENT:
-      return "#FFC2C8";
+      return "#FF4444";
     case INDIVIDUAL_FA:
       return "#99DDEC";
     default:
@@ -121,7 +121,7 @@ function init() {
   scroller
     .setup({
       step: "#scrolly article .step",
-      offset: 0.2,
+      offset: 0.4,
       debug: false
     })
     .onStepEnter(handleStepEnter);
